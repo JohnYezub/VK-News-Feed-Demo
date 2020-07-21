@@ -8,13 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AuthViewController: UIViewController {
 
+    private var authService : AuthService!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = .cyan
+        authService = SceneDelegate.shared().authService
     }
 
-
+    @IBAction func signInTouch(_ sender: UIButton) {
+        authService.wakeUpSession()
+    }
+    
 }
 
