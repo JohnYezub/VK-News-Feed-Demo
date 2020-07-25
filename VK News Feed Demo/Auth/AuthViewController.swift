@@ -15,7 +15,7 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = .cyan
+        self.view.backgroundColor = #colorLiteral(red: 0.8782210946, green: 0.941388011, blue: 1, alpha: 1)
         authService = SceneDelegate.shared().authService
     }
 

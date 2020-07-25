@@ -10,13 +10,20 @@ import UIKit
 
 class FeedViewController: UIViewController {
     
-    private var networkService = NetworkService()
+    private var networkDataFetcher: DataFetcher = NetworkDataFetcher(networking: NetworkService())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        view.backgroundColor = .blue
         
-        networkService.getFeed()
+        view.backgroundColor = #colorLiteral(red: 0.8782210946, green: 0.941388011, blue: 1, alpha: 1)
+        
+        networkDataFetcher.getFeed { (feedResponse) in
+            guard let feedResponse = feedResponse else { return }
+            feedResponse.items.map({ (feedItem) in
+                print(feedItem.date)
+            })
+        }
     }
+    
 }
+

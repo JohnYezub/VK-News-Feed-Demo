@@ -18,6 +18,8 @@
 		844B036224C6D66100882543 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844B036124C6D66100882543 /* AuthViewController.storyboard */; };
 		844B039424C6F0B300882543 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B039324C6F0B300882543 /* FeedViewController.swift */; };
 		844B039624C6F0C500882543 /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844B039524C6F0C500882543 /* FeedViewController.storyboard */; };
+		84A6EC2724CC6A9B00720389 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6EC2624CC6A9A00720389 /* FeedResponse.swift */; };
+		84A6EC2A24CC746D00720389 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6EC2924CC746D00720389 /* NetworkDataFetcher.swift */; };
 		84B5F0B324C9388C00689349 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5F0B224C9388C00689349 /* NetworkService.swift */; };
 		84B5F0B524C93A5F00689349 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5F0B424C93A5F00689349 /* API.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		844B036124C6D66100882543 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
 		844B039324C6F0B300882543 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		844B039524C6F0C500882543 /* FeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedViewController.storyboard; sourceTree = "<group>"; };
+		84A6EC2624CC6A9A00720389 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
+		84A6EC2924CC746D00720389 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		84B5F0B224C9388C00689349 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		84B5F0B424C93A5F00689349 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +117,7 @@
 				844B035E24C6D2DD00882543 /* AuthService.swift */,
 				84B5F0B224C9388C00689349 /* NetworkService.swift */,
 				84B5F0B424C93A5F00689349 /* API.swift */,
+				84A6EC2924CC746D00720389 /* NetworkDataFetcher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			children = (
 				844B039324C6F0B300882543 /* FeedViewController.swift */,
 				844B039524C6F0C500882543 /* FeedViewController.storyboard */,
+				84A6EC2824CC744D00720389 /* Model */,
 			);
 			path = FeedViewController;
 			sourceTree = "<group>";
@@ -133,6 +139,14 @@
 				844B036124C6D66100882543 /* AuthViewController.storyboard */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		84A6EC2824CC744D00720389 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84A6EC2624CC6A9A00720389 /* FeedResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,11 +244,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A6EC2724CC6A9B00720389 /* FeedResponse.swift in Sources */,
 				844B034524C69D8B00882543 /* AuthViewController.swift in Sources */,
 				844B034124C69D8B00882543 /* AppDelegate.swift in Sources */,
 				844B039424C6F0B300882543 /* FeedViewController.swift in Sources */,
 				844B034324C69D8B00882543 /* SceneDelegate.swift in Sources */,
 				84B5F0B324C9388C00689349 /* NetworkService.swift in Sources */,
+				84A6EC2A24CC746D00720389 /* NetworkDataFetcher.swift in Sources */,
 				844B035F24C6D2DD00882543 /* AuthService.swift in Sources */,
 				84B5F0B524C93A5F00689349 /* API.swift in Sources */,
 			);

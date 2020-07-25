@@ -23,7 +23,7 @@ class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     override init() {
         vkSdk = VKSdk.initialize(withAppId: appId)
         super.init()
-        print(#function)
+        print("AuthService: \(#function)")
         vkSdk.register(self)
         vkSdk.uiDelegate = self
     }
@@ -35,7 +35,7 @@ class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     }
     
     func wakeUpSession() {
-        let scope = ["offline"]
+        let scope = ["wall","friends"]
         VKSdk.wakeUpSession(scope) { [delegate] (state, error) in
             switch state {
                 
@@ -46,6 +46,7 @@ class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
                 print("authorized")
                 delegate?.authServiceSignIn()
             default:
+                print("authServiceSignInDidFail")
                 delegate?.authServiceSignInDidFail()
             }
         }
