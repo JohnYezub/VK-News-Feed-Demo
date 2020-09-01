@@ -21,6 +21,13 @@ class NewsfeedInteractor: NewsfeedBusinessLogic {
     if service == nil {
       service = NewsfeedService()
     }
+    switch request {
+    case .some:
+        print("interactor some")
+    case .getFeed:
+        print("interactor getFeed")
+        presenter?.presentData(response: .presentNewsFeed)
+    }
   }
   
 }
