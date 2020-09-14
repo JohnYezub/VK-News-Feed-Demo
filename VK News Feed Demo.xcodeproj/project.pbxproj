@@ -29,6 +29,7 @@
 		84B5F0B324C9388C00689349 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5F0B224C9388C00689349 /* NetworkService.swift */; };
 		84B5F0B524C93A5F00689349 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5F0B424C93A5F00689349 /* API.swift */; };
 		84C23D34250D042C00D00780 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C23D33250D042C00D00780 /* FeedResponse.swift */; };
+		84C23D38250F62BE00D00780 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C23D37250F62BE00D00780 /* WebImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,6 +71,7 @@
 		84B5F0B224C9388C00689349 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		84B5F0B424C93A5F00689349 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		84C23D33250D042C00D00780 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
+		84C23D37250F62BE00D00780 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				844B034024C69D8B00882543 /* AppDelegate.swift */,
 				844B034224C69D8B00882543 /* SceneDelegate.swift */,
+				84C23D37250F62BE00D00780 /* WebImageView.swift */,
 				844C671B24D2858500189187 /* Newsfeed */,
 				844B036024C6D2EB00882543 /* Services */,
 				844B039824C6F1AC00882543 /* Auth */,
@@ -283,6 +286,7 @@
 				844B034324C69D8B00882543 /* SceneDelegate.swift in Sources */,
 				84B5F0B324C9388C00689349 /* NetworkService.swift in Sources */,
 				844C672624D285AA00189187 /* NewsfeedModels.swift in Sources */,
+				84C23D38250F62BE00D00780 /* WebImageView.swift in Sources */,
 				84A6EC2A24CC746D00720389 /* NetworkDataFetcher.swift in Sources */,
 				844C672424D285AA00189187 /* NewsfeedWorker.swift in Sources */,
 				844B035F24C6D2DD00882543 /* AuthService.swift in Sources */,

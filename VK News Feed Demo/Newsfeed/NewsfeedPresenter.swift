@@ -22,7 +22,7 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
     case .presentNewsFeed(feed: let feed):
         
         let cells = feed.items.map { (item) in
-            cellViewModel(from: item)
+            cellViewModel(from: item, profiles: feed.profiles, groups: feed.groups)
         }
         
         let feedViewModel = FeedViewModel.init(cells: cells)
@@ -30,16 +30,37 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
         viewController?.displayData(viewModel: Newsfeed.Model.ViewModel.ViewModelData.displayNewsFeed(feedViewModel: feedViewModel))
     }
     
-    func cellViewModel(from feedItem: FeedItem) -> FeedViewModel.Cell {
-        return FeedViewModel.Cell.init(iconUrlString: "",
-                                       name: "name",
-                                       date: "\(feedItem.date)",
+    func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group]) -> FeedViewModel.Cell {
+        
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "ru_RU")
+        df.dateFormat = "d MMM 'в' HH:mm"
+            
+        let date = Date(timeIntervalSince1970: feedItem.date)
+        let dateTitle = df.string(from: date)
+        
+        let profile = self.profile(for: feedItem.sourceId, profiles: profiles, groups: groups)
+        return FeedViewModel.Cell.init(iconUrlString: profile.photo,
+                                       name: profile.name,
+                                       date: dateTitle,
                                        text: feedItem.text,
                                        likes:  String(feedItem.likes?.count ?? 0),
                                        comments:  String(feedItem.comments?.count ?? 0),
                                        shares:  String(feedItem.reposts?.count ?? 0),
                                        views: String(feedItem.views?.count ?? 0))
     }
-  
+    
 }
+    
+    private func profile(for sourceId: Int, profiles: [Profile], groups: [Group]) -> ProfileRepresentable {
+           
+           let profileOrGroup: [ProfileRepresentable] = sourceId >= 0 ? profiles : groups
+           let normalSourceId = sourceId >= 0 ? sourceId : -sourceId
+           let profileRepresentable = profileOrGroup.first { profile in
+               profile.id == normalSourceId
+           }
+           
+           return profileRepresentable!
+       }
+    
 }
