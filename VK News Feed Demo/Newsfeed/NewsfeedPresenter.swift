@@ -40,7 +40,9 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
         let dateTitle = df.string(from: date)
         
         let profile = self.profile(for: feedItem.sourceId, profiles: profiles, groups: groups)
-        return FeedViewModel.Cell.init(iconUrlString: profile.photo,
+        let photoAttachment = self.photoAttachment(feedItem: feedItem)
+        return FeedViewModel.Cell.init(photoAttachment: photoAttachment,
+                                       iconUrlString: profile.photo,
                                        name: profile.name,
                                        date: dateTitle,
                                        text: feedItem.text,
@@ -62,5 +64,14 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
            
            return profileRepresentable!
        }
+    private func photoAttachment(feedItem: FeedItem) -> FeedViewModel.FeedCellPhotoAttachment? {
+        guard let photos = feedItem.attachments?.compactMap({ (attachment)  in
+            attachment.photo
+        }), let firstPhoto = photos.first else { return nil }
+
+        let result = FeedViewModel.FeedCellPhotoAttachment.init(photoUrl: firstPhoto.src, width: firstPhoto.width, height: firstPhoto.height)
+        
+        return result
+    }
     
 }

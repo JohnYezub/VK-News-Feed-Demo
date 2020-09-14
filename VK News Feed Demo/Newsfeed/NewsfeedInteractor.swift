@@ -27,11 +27,7 @@ class NewsfeedInteractor: NewsfeedBusinessLogic {
     case .getNewsFeed:
         fetcher.getFeed { [weak self](response) in
             guard let response = response else { return }
-            
-            response.profiles.map { (profile) in
-                print("\(profile) \n\n")
-            }
-            
+                        
             self?.presenter?.presentData(response: Newsfeed.Model.Response.ResponseType.presentNewsFeed(feed: response))
         }
         print("interactor getFeed")
